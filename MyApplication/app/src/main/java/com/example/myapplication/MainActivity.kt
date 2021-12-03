@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ActivityMainBinding
@@ -30,17 +31,17 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        //fillSampleTodos()
-        //recyclerView.adapter = TodoListAdapter()
+        fillSampleTodos()
+        recyclerView.adapter = TodoListAdapter(todos)
 
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.navigationHost) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.navhost) as NavHostFragment
 
-        drawerLayout = binding.drawerLayout
+        //drawerLayout = binding.drawerLayout
         NavigationUI.setupWithNavController(binding.navigationHost, navHostFragment.navController)
         //to displau the hamburger menu icon for nav drawer
-        NavigationUI.setupActionBarWithNavController(this,navHostFragment.navController, drawerLayout)
+        //NavigationUI.setupActionBarWithNavController(this,navHostFragment.navController, drawerLayout)
     }
 
     val todos = mutableListOf<TodoData>()

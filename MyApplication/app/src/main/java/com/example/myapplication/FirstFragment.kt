@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.myapplication.databinding.FragmentFirstBinding
 
 /**
@@ -33,7 +35,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_listFragment_to_taskDetailFragment)
         }
     }
 
